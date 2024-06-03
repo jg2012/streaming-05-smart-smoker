@@ -47,4 +47,4 @@ Document your project works - display screenshots of your console and maybe the 
 If you only have a producer, you won't have a consumer showing messages yet, so you'll need to be creative. We'll build the consumers next.
 
 ## Screenshot 
-[BBQ Smoker](BBQ-Smoker.png)
+![BBQ Smoker](BBQ-Smoker.png)
