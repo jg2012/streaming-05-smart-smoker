@@ -48,3 +48,12 @@ If you only have a producer, you won't have a consumer showing messages yet, so 
 
 ## Screenshot 
 ![BBQ Smoker](BBQ-Smoker.png)
+
+BBQ Smoker Week 6 
+![BBQ Smoker](BBQ_Smoker.png)
+
+Food Stall A 
+![Food Stall A](Food_A.png)
+
+Food Stall B 
+![Food Stall B](Food_B.png)

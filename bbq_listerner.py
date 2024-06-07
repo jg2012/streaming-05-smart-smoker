@@ -35,10 +35,16 @@ def process_food_temp(ch, method, properties, body, food_temps, food_name):
     temp = float(temp)
     food_temps.append((time_utc, temp))
     print(f" [x] {food_name} Queue Received: {time_utc}, {temp}")
+    
     if len(food_temps) == food_temps.maxlen:
-        if max(food_temps, key=lambda x: x[1])[1] - min(food_temps, key=lambda x: x[1])[1] < FOOD_TEMP_STALL_THRESHOLD:
+        # Calculate the temperature change between the latest reading and the reading from 10 minutes ago
+        temp_change = temp - food_temps[0][1]
+        if abs(temp_change) <= FOOD_TEMP_STALL_THRESHOLD:
             print(f"{time_utc} - {food_name} stall! Temperature changed less than 1 degree F in 10 minutes.")
+            # Here you can add code to send an alert message to a designated queue or perform any other action you desire
     ch.basic_ack(delivery_tag=method.delivery_tag)
+
+
 
 def start_consumer(queue_name, callback, *args):
     host = "localhost"
